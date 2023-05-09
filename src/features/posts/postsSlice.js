@@ -16,9 +16,15 @@ const initialState = [
 const postsSlice = createSlice({
   name: "posts",
   initialState,
-  reducers: {},
+  reducers: {
+    postAdded(state, action){        
+      state.push(action.payload)     //although it seems like we are mutating the state here, but underneath the hood immerJS updates the state in immutable manner.
+    }                                //immerJS is active inside createSlice() func
+  },
 });
 
 export const selectAllPosts = (state) => state.posts;
+
+export const {postAdded} = postsSlice.actions; //this is action creator func
 
 export default postsSlice.reducer
