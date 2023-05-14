@@ -19,19 +19,14 @@ const initialState = [
 const postsSlice = createSlice({
   name: "posts",
   initialState,
-  // reducers: {
-  //   postAdded(state, action) {
-  //     state.push(action.payload);
-  //   },
-  // },
   reducers: {
     postAdded: {
       reducer(state, action) {
         state.push(action.payload);
       },
-      prepare(title, content) {
+      prepare(title, content, userId) {
         return {
-          payload: { id: nanoid(), title, content },
+          payload: { id: nanoid(), title, content, userId },
         };
       },
     },
