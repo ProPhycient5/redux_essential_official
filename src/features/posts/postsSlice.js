@@ -1,15 +1,18 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { sub } from "date-fns";
 
 const initialState = [
   {
     id: "1",
     title: "Learning Redux Toolkit",
     content: "This is the coolest thing",
+    date: sub(new Date(), {minutes: 10}).toISOString()
   },
   {
     id: "2",
     title: "Frontend Architecture",
     content: "One of the important stuff every Frontend dev should learn",
+    date: sub(new Date(), {minutes: 5}).toISOString()
   },
 ];
 //although it seems like we are mutating the state here,
@@ -26,7 +29,7 @@ const postsSlice = createSlice({
       },
       prepare(title, content, userId) {
         return {
-          payload: { id: nanoid(), title, content, userId },
+          payload: { id: nanoid(), title, content, userId, date: new Date().toISOString() },
         };
       },
     },
