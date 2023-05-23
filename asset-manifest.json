@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/redux_essential_official/static/css/main.4df40315.css",
+    "main.js": "/redux_essential_official/static/js/main.35823fe0.js",
+    "index.html": "/redux_essential_official/index.html",
+    "main.4df40315.css.map": "/redux_essential_official/static/css/main.4df40315.css.map",
+    "main.35823fe0.js.map": "/redux_essential_official/static/js/main.35823fe0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4df40315.css",
+    "static/js/main.35823fe0.js"
+  ]
+}
